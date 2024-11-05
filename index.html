@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAV to FLAC Converter | Free Online Audio Conversion Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+
+    <script src="https://preline.co/assets/vendor/preline/dist/index.js?v=2.5.0"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        section {
+            padding-top: 100px !important;
+            padding-bottom: 100px !important;
+        }
+
+        @media (max-width: 1024px) {
+            section {
+                padding-top: 64px !important;
+                padding-bottom: 64px !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            section {
+                padding-top: 40px !important;
+                padding-bottom: 40px !important;
+            }
+        }
+    </style>
+    <script>
+        console.log('DOMContentLoaded');
+        
+        // Function to handle image loading errors
+        function handleImageError(img) {
+            const width = img.getAttribute('width') || img.clientWidth || 300;
+            const height = img.getAttribute('height') || img.clientHeight || 200;
+            img.src = "https://placehold.co/" + width + "x" + height;
+            img.alt = 'Placeholder image';
+        }
+
+        // Function to process an image
+        function processImage(img) {
+            console.log('New image found:', img.src);
+            img.addEventListener('error', () => handleImageError(img));
+        }
+
+        // Function to observe DOM changes and attach error handlers to new images
+        function observeImages() {
+            // Create a MutationObserver instance
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    // Check added nodes for images
+                    mutation.addedNodes.forEach((node) => {
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            if (node.nodeName === 'IMG') {
+                                processImage(node);
+                            }
+                            
+                            // Also check for images within added nodes
+                            const images = node.getElementsByTagName('img');
+                            Array.from(images).forEach(processImage);
+                        }
+                    });
+                });
+            });
+
+            // Start observing the document with the configured parameters
+            const config = { childList: true, subtree: true };
+            observer.observe(document.body, config);
+
+            // Also handle existing images
+            const existingImages = document.getElementsByTagName('img');
+            Array.from(existingImages).forEach(processImage);
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', observeImages);
+        } else {
+            observeImages();
+        }
+    </script>
+</head>
+
+<body class=" leading-normal"> <element id="b1a845f8-7ace-405a-a8d0-662f889bc366" data-section-id="b1a845f8-7ace-405a-a8d0-662f889bc366">
+
+
+             
+             <htmlcode>
+<div id="root" class="">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <header class="sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full max-w-screen-xl mx-auto bg-dark/90 blue:bg-neutral-950/90 border border-neutral-200 light:border-neutral-800 shadow-lg shadow-neutral-100/50 dark:shadow-neutral-900/50 backdrop-blur-lg rounded-3xl text-sm py-3 sm:py-4">
+        <nav class="relative max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8" aria-label="Global">
+            <div class="flex items-center justify-between">
+                <a class="flex-none text-xl font-semibold blue:text-white" href="#" aria-label="Brand">WAV to FLAC</a>
+                <div class="sm:hidden">
+                    <button type="button" class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-neutral-700 shadow-sm align-middle hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-600 transition-all text-sm dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:border-neutral-700 dark:text-neutral-400 dark:hover:text-white dark:focus:ring-offset-neutral-800" data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
+                        <svg class="hs-collapse-open:hidden w-4 h-4" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+                        </svg>
+                        <svg class="hs-collapse-open:block hidden w-4 h-4" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="navbar-collapse-with-animation" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
+                <div class="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:pl-7">
+                    <a class="font-medium text-primary-600 sm:py-6 dark:text-primary-500" href="#" aria-current="page">Home</a>
+                    <a class="font-medium text-neutral-500 hover:text-neutral-400 sm:py-6 dark:text-neutral-400 dark:hover:text-neutral-500" href="#">How It Works</a>
+                    <a class="font-medium text-neutral-500 hover:text-neutral-400 sm:py-6 dark:text-neutral-400 dark:hover:text-neutral-500" href="#">Features</a>
+                    <a class="font-medium text-neutral-500 hover:text-neutral-400 sm:py-6 dark:text-neutral-400 dark:hover:text-neutral-500" href="#">FAQ</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+        <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
+            <div class="">
+                <h1 class="block text-3xl font-bold text-neutral-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-dark">Convert WAV to FLAC <span class="text-primary-600">Easily</span></h1>
+                <p class="mt-3 text-lg text-neutral-800 dark:text-neutral-400">Transform your WAV files to high-quality FLAC format with our simple, fast, and free online converter.</p>
+                <div class="mt-7 grid gap-3 w-full sm:inline-flex">
+                    <a id="start-converting-button" class="inline-flex justify-center items-center gap-x-3 text-center bg-primary-600 hover:bg-primary-700 border border-transparent text-sm lg:text-base text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:focus:ring-offset-neutral-800" href="#">
+                        Start Converting
+                        <svg class="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                        </svg>
+                    </a>
+                    <a class="inline-flex justify-center items-center gap-x-3.5 text-sm lg:text-base text-center border hover:border-neutral-300 shadow-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:border-neutral-800 dark:hover:border-neutral-700 dark:shadow-neutral-700/[.7] dark:dark dark:focus:ring-neutral-700 dark:focus:ring-offset-neutral-800" href="#">
+                        Learn more
+                    </a>
+                </div>
+            </div>
+            <div class="relative ms-4">
+                <img class="w-full rounded-md" src="https://images.unsplash.com/photo-1665686376173-ada7a0031a85?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;h=700&amp;q=80" alt="Image Description">
+                <div class="absolute inset-0 -z-[1] bg-gradient-to-tr from-neutral-200 via-white/0 to-white/0 w-full h-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-neutral-900 dark:via-neutral-900/0 dark:to-neutral-900/0"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</htmlcode>
+            
+            </element><element id="de42e2fa-3b3d-425a-89db-7a49dc9fee47" data-section-id="de42e2fa-3b3d-425a-89db-7a49dc9fee47">
+
+<htmlCode>
+<div id="rooting-box">
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+            <h2 class="text-2xl font-bold md:text-3xl md:leading-tight text-gray-800 dark:text-gray-500">WAV to FLAC Converter</h2>
+            <p class="mt-1 text-gray-600 dark:text-gray-400">Convert your WAV files to high-quality FLAC format in seconds</p>
+        </div>
+
+        <div class="max-w-xl mx-auto">
+            <div class="bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                <div class="p-4 sm:p-7">
+                    <div class="text-center">
+                        <h2 class="block text-xl font-bold text-gray-800 dark:text-gray-200">Upload your WAV file</h2>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                            Drag and drop your file or click to browse
+                        </p>
+                    </div>
+        
+                    <div class="mt-5">
+                        <form id="uploadForm" onsubmit="return false;"> <!-- Prevent default form submission -->
+                            <div class="grid gap-y-4">
+                                <div class="relative group p-4 sm:p-7 border-2 border-dashed border-gray-300 rounded-lg text-center">
+                                    <input type="file" name="file" id="file" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept=".wav">
+                                    <div class="dz-message">
+                                        <h5 class="mt-4 font-bold text-gray-800 dark:text-white">Drag and drop your WAV file here</h5>
+                                        <p class="mt-1 text-sm text-gray-500">or</p>
+                                        <span class="mt-1 inline-flex justify-center items-center gap-x-1.5 text-sm text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                                            Browse files
+                                        </span>
+                                    </div>
+                                </div>
+        
+                                <button id="convertButton" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
+                                    Convert to FLAC
+                                </button>
+                            </div>
+                        </form>
+                        <div id="status" class="mt-4 text-center text-gray-600"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+</htmlCode></element><element id="32dc2d15-9df9-4241-8ec3-4969997abe12" data-section-id="32dc2d15-9df9-4241-8ec3-4969997abe12">
+
+<htmlCode>
+<div id="root">
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+            <h2 class="text-2xl font-bold md:text-3xl md:leading-tight text-gray-800 dark:text-gray-500">How It Works</h2>
+            <p class="mt-1 text-gray-600 dark:text-gray-400">Convert your WAV files to FLAC in three simple steps</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+                <div class="h-52 flex flex-col justify-center items-center bg-blue-600 rounded-t-xl">
+                    <svg class="w-28 h-28" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                    </svg>
+                </div>
+                <div class="p-4 md:p-6">
+                    <span class="block mb-1 text-xs font-semibold uppercase text-blue-600 dark:text-blue-500">
+                        Step 1
+                    </span>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-300">
+                        Upload WAV File
+                    </h3>
+                    <p class="mt-3 text-gray-500">
+                        Select and upload your WAV file using our simple interface. We support files up to 100MB.
+                    </p>
+                </div>
+            </div>
+
+            <div class="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+                <div class="h-52 flex flex-col justify-center items-center bg-rose-500 rounded-t-xl">
+                    <svg class="w-28 h-28" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19.5 12c0-1.232-.046-2.453-.134-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.088 1.209-.134 2.43-.134 3.662 0 1.232.046 2.453.134 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.088-1.209.134-2.43.134-3.662zM9.75 12l3 3m0 0l3-3m-3 3v-7.5"></path>
+                    </svg>
+                </div>
+                <div class="p-4 md:p-6">
+                    <span class="block mb-1 text-xs font-semibold uppercase text-rose-600 dark:text-rose-500">
+                        Step 2
+                    </span>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-300">
+                        Convert
+                    </h3>
+                    <p class="mt-3 text-gray-500">
+                        Our advanced algorithms process your WAV file and convert it to high-quality FLAC format, preserving audio fidelity.
+                    </p>
+                </div>
+            </div>
+
+            <div class="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+                <div class="h-52 flex flex-col justify-center items-center bg-amber-500 rounded-t-xl">
+                    <svg class="w-28 h-28" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                </div>
+                <div class="p-4 md:p-6">
+                    <span class="block mb-1 text-xs font-semibold uppercase text-amber-600 dark:text-amber-500">
+                        Step 3
+                    </span>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-300">
+                        Download FLAC
+                    </h3>
+                    <p class="mt-3 text-gray-500">
+                        Once the conversion is complete, download your new FLAC file instantly. It's that simple!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</htmlCode></element><element id="7813fcd7-3e8a-453d-9422-b3657bf6db9a" data-section-id="7813fcd7-3e8a-453d-9422-b3657bf6db9a">
+
+
+
+
+<htmlCode>
+<div id="root">
+  <footer class="bg-neutral-900 text-white py-8">
+    <div class="max-w-screen-xl mx-auto px-4 xl:px-0">
+      <div class="flex flex-wrap justify-between items-center">
+        <div class="w-full md:w-1/3 mb-4 md:mb-0">
+          <h3 class="text-xl font-bold mb-2">WAV to FLAC Converter</h3>
+          <p class="text-sm text-neutral-400">Convert your WAV files to FLAC format easily and quickly.</p>
+        </div>
+        <div class="w-full md:w-1/3 mb-4 md:mb-0">
+          <h4 class="text-lg font-semibold mb-2">Quick Links</h4>
+          <ul class="text-sm">
+            <li class="mb-1"><a href="#" class="hover:text-yellow-400 transition-colors">Home</a></li>
+            <li class="mb-1"><a href="#" class="hover:text-yellow-400 transition-colors">Convert</a></li>
+            <li class="mb-1"><a href="#" class="hover:text-yellow-400 transition-colors">About</a></li>
+            <li class="mb-1"><a href="#" class="hover:text-yellow-400 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div class="w-full md:w-1/3">
+          <h4 class="text-lg font-semibold mb-2">Connect With Us</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-neutral-400 hover:text-yellow-400 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-yellow-400 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-yellow-400 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm text-neutral-400">
+        <p>&copy; 2024 WAV to FLAC Converter. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+</htmlCode></element>
+                    <div id="page_complete">
+                    <script>
+                        console.log('Page complete');
+                    </script>
+                    <script>
+                        document.getElementById('start-converting-button').addEventListener('click', function(event) {
+                            event.preventDefault(); // Prevent default anchor click behavior
+                            document.getElementById('rooting-box').scrollIntoView({ behavior: 'smooth' });
+                        });
+                    </script>
+                    <script>
+                        const convertButton = document.getElementById('convertButton');
+                        const wavFileInput = document.getElementById('file'); // Updated to match the input ID
+                        const statusDiv = document.getElementById('status');
+                        const ws = new WebSocket('wss://peritys-task-21bce10211.onrender.com/ws/123');
+                    
+                        ws.onopen = () => {
+                            console.log('WebSocket connection established');
+                        };
+                    
+                        ws.onmessage = (event) => {
+                            const flacBlob = new Blob([event.data], { type: 'audio/flac' });
+                            const flacUrl = URL.createObjectURL(flacBlob);
+                            const a = document.createElement('a');
+                            a.href = flacUrl;
+                            a.download = 'output.flac';
+                            a.style.display = 'inline-block';  // Make it a block-level element
+    a.style.padding = '10px 20px';     // Add some padding
+    a.style.marginTop = '10px';        // Add some margin on top
+    a.style.backgroundColor = '#4CAF50'; // Green background
+    a.style.color = 'white';           // White text color
+    a.style.borderRadius = '5px';      // Rounded corners
+    a.style.textDecoration = 'none';    // Remove underline
+    a.style.fontWeight = 'bold';        // Bold text
+    a.style.transition = 'background-color 0.3s ease';
+                            a.className = 'download-link';
+                            a.textContent = 'Download FLAC file';
+                            statusDiv.innerHTML = ''; // Clear previous messages
+                            statusDiv.appendChild(a); // Append download link
+                        };
+                    
+                        ws.onclose = () => {
+                            console.log('WebSocket connection closed');
+                        };
+                    
+                        convertButton.onclick = () => {
+                            const file = wavFileInput.files[0];
+                            if (!file) {
+                                alert('Please select a WAV file to convert.');
+                                return;
+                            }
+                    
+                            const reader = new FileReader();
+                            reader.onload = function (event) {
+                                const wavData = new Uint8Array(event.target.result);
+                                ws.send(wavData);
+                                statusDiv.textContent = 'Sending WAV data to server...';
+                            };
+                            reader.readAsArrayBuffer(file);
+                        };
+                    </script>
+                    </body>
+                    </html>
+                
+
